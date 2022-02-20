@@ -1,0 +1,59 @@
+CREATE TABLE public.school
+(
+    id integer,
+    name text,
+    PRIMARY KEY (id)
+);
+
+ALTER TABLE IF EXISTS public.school
+    OWNER to postgres;
+
+
+
+insert into school(id, name) values(1,'Guhan')
+
+
+SELECT * FROM public.school
+ORDER BY id ASC 
+
+INSERT INTO public.school(
+	id, name)
+	VALUES (2, 'Anbu');
+
+
+SELECT * FROM public.school
+ORDER BY id ASC 
+
+-----------------------------------------------------------------------------------------
+
+-- Table: public.employee
+
+-- DROP TABLE IF EXISTS public.employee;
+
+CREATE TABLE IF NOT EXISTS public.employee
+(
+    id integer NOT NULL,
+    name text COLLATE pg_catalog."default" NOT NULL,
+    age integer NOT NULL,
+    address character(300) COLLATE pg_catalog."default" NOT NULL,
+    salary real NOT NULL,
+    CONSTRAINT employee_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.employee
+    OWNER to postgres;
+
+-----------------------------------------------------------------------------------------
+
+INSERT INTO public.employee(
+	id, name, age, address, salary)
+	VALUES (1, 'Guhan', 30, '2/22, North Street, Chennai', 20000);
+
+
+SELECT id, name, age, address, salary
+	FROM public.employee;
+
+
+
