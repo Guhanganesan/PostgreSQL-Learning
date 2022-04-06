@@ -1,0 +1,42 @@
+Example 1:
+
+create table student_details (
+	id int primary key not null,
+	first_name text not null,
+	last_name text not null,
+	nick_name text not null,
+	family_name text not null,
+	address char(500) not null,
+	district char(200) not null,
+	email text not null,
+	mobile text not null,
+	username text not null,
+	password text not null,
+	school_name text default 'Government Hr Sec School'
+)
+
+FOREIGN KEY Constraint:
+
+CREATE TABLE COMPANY6(
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL,
+   AGE            INT     NOT NULL,
+   ADDRESS        CHAR(50),
+   SALARY         REAL
+);
+
+CREATE TABLE DEPARTMENT1(
+   ID INT PRIMARY KEY      NOT NULL,
+   DEPT           CHAR(50) NOT NULL,
+   EMP_ID         INT      references COMPANY6(ID)
+);
+
+CREATE TABLE COMPANY5(
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL,
+   AGE            INT     NOT NULL,
+   ADDRESS        CHAR(50),
+   SALARY         REAL    CHECK(SALARY > 0)
+);
+
+Thanks: https://www.tutorialspoint.com/postgresql/postgresql_constraints.htm
